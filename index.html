@@ -268,7 +268,10 @@
     </div>
 
     <script>
-        const API_URL = 'http://localhost:8099/status';
+        // Use Vercel API endpoint when deployed, fallback to localhost for local development
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:8099/status'
+            : '/api/status';
         let previousData = null;
 
         function formatCurrency(value) {
