@@ -1,0 +1,13 @@
+[Unit]
+Description=Go-Trader Dashboard Web Interface
+After=network.target go-trader.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/.openclaw/workspace/go-trader-dashboard
+ExecStart=/usr/bin/python3 /root/.openclaw/workspace/go-trader-dashboard/server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
